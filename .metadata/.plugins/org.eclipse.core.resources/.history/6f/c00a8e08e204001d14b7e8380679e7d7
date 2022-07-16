@@ -1,0 +1,5 @@
+package com.flightApp.entity;
+
+public class Inventory {
+
+}

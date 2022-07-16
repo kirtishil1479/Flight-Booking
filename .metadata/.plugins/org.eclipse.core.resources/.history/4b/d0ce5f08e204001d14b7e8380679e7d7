@@ -1,0 +1,5 @@
+package com.flightApp.controller;
+
+public class BookingController {
+
+}

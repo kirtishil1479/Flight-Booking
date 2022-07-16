@@ -1,0 +1,5 @@
+package com.flightApp.repository;
+
+public interface InventoryRepository {
+
+}

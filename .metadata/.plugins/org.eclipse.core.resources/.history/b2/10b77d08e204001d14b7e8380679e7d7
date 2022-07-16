@@ -1,0 +1,5 @@
+package com.flightApp.service;
+
+public class BookingServiceImpl {
+
+}

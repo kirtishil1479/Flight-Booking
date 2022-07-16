@@ -1,0 +1,5 @@
+package com.flightApp.component;
+
+public class BookingException {
+
+}

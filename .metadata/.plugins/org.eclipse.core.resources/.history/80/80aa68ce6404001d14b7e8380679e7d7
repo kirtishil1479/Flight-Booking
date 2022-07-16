@@ -1,0 +1,5 @@
+package com.flightApp.binding;
+
+public class Booking {
+
+}

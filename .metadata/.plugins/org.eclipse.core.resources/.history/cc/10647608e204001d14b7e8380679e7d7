@@ -1,0 +1,54 @@
+package com.flightApp;
+
+import java.util.Arrays;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.flightApp.entity.BookingRecord;
+import com.flightApp.entity.Inventory;
+import com.flightApp.repository.BookingRepository;
+import com.flightApp.repository.InventoryRepository;
+import com.flightApp.service.BookingServiceImpl;
+
+@SpringBootApplication
+public class BookApplication implements CommandLineRunner {
+	
+	 @Autowired
+	 private BookingRepository bookinngRepository;
+	 
+	 @Autowired
+	 private BookingServiceImpl bookingServiceImpl;
+	 
+	 @Autowired
+	 private InventoryRepository inventoryRepository;
+	
+	
+	
+
+	public static void main(String[] args) {
+		SpringApplication.run(BookApplication.class, args);
+	}
+
+	@Override
+	public void run(String... strings) throws Exception {
+		Inventory[] invs= {
+				new Inventory("KD100","18-DEC-2022",100),
+				new Inventory("KD101","18-DEC-2022",100),
+				new Inventory("KD102","18-DEC-2022",100),
+				new Inventory("KD103","18-DEC-2022",100),
+				new Inventory("KD104","18-DEC-2022",100),
+				new Inventory("KD105","18-DEC-2022",100),
+				new Inventory("KD106","18-DEC-2022",100),
+				};
+		Arrays.asList(invs).forEach(inventory ->this.inventoryRepository.save(inventory));
+		
+		
+		BookingRecord booking=new BookingRecord("KD-101","NYC","KJD","18-DEC-2022",new Date(),"101");
+		
+	}
+
+}
